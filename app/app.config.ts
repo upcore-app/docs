@@ -24,6 +24,17 @@ export default defineAppConfig({
     },
   },
 
+  footer: {
+    // Imprint, privacy policy and terms live on the product site; the docs sit
+    // under the same legal entity, so they link there instead of duplicating
+    // the pages here.
+    legal: [
+      { label: 'Impressum', to: 'https://upcore.app/impressum' },
+      { label: 'Datenschutz', to: 'https://upcore.app/datenschutz' },
+      { label: 'AGB', to: 'https://upcore.app/agb' },
+    ],
+  },
+
   github: {
     url: 'https://github.com/upcore-app/upcore',
     branch: 'main',
