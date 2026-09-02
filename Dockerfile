@@ -43,6 +43,11 @@ ENV NODE_ENV=production \
 
 COPY --from=build --chown=node:node /app/.output ./.output
 
+# Nuxt Content legt seine SQLite-Datei zur Laufzeit unter ./contents.sqlite an
+# (relativ zum WORKDIR, siehe runtimeConfig im Output). Ohne schreibbares /app
+# scheitert der erste Content-Request.
+RUN chown node:node /app
+
 USER node
 EXPOSE 3000
 
