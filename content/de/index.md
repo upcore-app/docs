@@ -29,7 +29,7 @@ Es läuft als einzelner Container gegen eine SQLite-Datei — oder gegen Postgre
   :::u-button
   ---
   size: sm
-  to: https://github.com/upcore-app/upcore/blob/main/LICENSE.md
+  to: https://github.com/upcore-app/upcore/blob/development/LICENSE.md
   target: _blank
   variant: subtle
   trailing-icon: i-lucide-arrow-right
