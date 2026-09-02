@@ -1,13 +1,19 @@
 # syntax=docker/dockerfile:1
 
-# Build-Stage: Bun installiert die Abhängigkeiten und baut das Nitro-Output.
+# Build-Stage: Bun installiert die Abhängigkeiten, gebaut wird mit Node.
 # Alpine, damit die nativen Module (better-sqlite3, sharp, @takumi-rs) gegen
 # musl gebaut werden und im Alpine-Runtime-Image laufen.
 ARG BUN_VERSION=1.3.14
 ARG NODE_VERSION=22
 
-FROM oven/bun:${BUN_VERSION}-alpine AS build
+# Bun kommt nur als Paketmanager mit — als Laufzeit scheitert es unter musl
+# beim Laden von @nuxt/vite-builder. Gebaut wird deshalb mit demselben Node,
+# das nachher auch das Output ausführt.
+FROM oven/bun:${BUN_VERSION}-alpine AS bun
+
+FROM node:${NODE_VERSION}-alpine AS build
 WORKDIR /app
+COPY --from=bun /usr/local/bin/bun /usr/local/bin/bun
 
 # better-sqlite3 liefert keine musl-Prebuilds und wird hier aus dem Quellcode
 # gebaut. Nur in dieser Stage — im Runtime-Image bleibt davon nichts übrig.
@@ -24,7 +30,7 @@ COPY . .
 
 ENV NODE_ENV=production \
     NUXT_TELEMETRY_DISABLED=1
-RUN bun run build
+RUN node node_modules/nuxt/bin/nuxt.mjs build
 
 # Runtime-Stage: nur das .output-Verzeichnis auf einem nackten node-alpine.
 FROM node:${NODE_VERSION}-alpine AS runtime
