@@ -1,0 +1,29 @@
+# Alles, was nicht in den Build-Context gehört — hält den Kontext klein und
+# verhindert, dass lokale Artefakte den Layer-Cache invalidieren.
+.git
+.github
+.idea
+.claude
+.agents
+.vscode
+.history
+
+node_modules
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+
+*.log
+logs
+.DS_Store
+.env
+.env.*
+!.env.example
+*.tgz
+.tmp
+
+Dockerfile
+.dockerignore

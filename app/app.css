@@ -1,0 +1,133 @@
+/* upcore brand theme for the documentation site.
+ *
+ * Docus imports this file automatically (its `css` module resolves
+ * app/app.css), after `tailwindcss` and `@nuxt/ui` — so no `@import
+ * "tailwindcss"` here, that would duplicate the whole framework.
+ *
+ * Everything below is taken from the app itself: the palette from
+ * app/assets/css/tailwind.css, the heading face from --font-heading. The
+ * point is that a reader who moves between the docs and their own instance
+ * does not cross a visual border.
+ */
+
+/* The brand face, self-hosted like in the app — nothing from a Google CDN. */
+@import "@fontsource-variable/outfit";
+
+@theme static {
+  /* Headings and the wordmark only. Body copy stays on the system stack,
+     which reads better at small sizes — the same split the app makes. */
+  --font-heading: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* --- primary: the "up" green -------------------------------------------
+     #00ff70 sits at 400, the shade Nuxt UI reaches for in dark mode, because
+     that is where it belongs: it was picked for a near-black canvas. Light
+     mode uses 500/600, which are dark enough to read as text on white. */
+  --color-upcore-50: #e6fff2;
+  --color-upcore-100: #c2ffe0;
+  --color-upcore-200: #85ffc2;
+  --color-upcore-300: #3dffa0;
+  --color-upcore-400: #00ff70;
+  --color-upcore-500: #00cc59;
+  --color-upcore-600: #00a447;
+  --color-upcore-700: #007e37;
+  --color-upcore-800: #00632c;
+  --color-upcore-900: #005125;
+  --color-upcore-950: #002d14;
+
+  /* --- error: the "down" red --------------------------------------------- */
+  --color-down-50: #fff0f4;
+  --color-down-100: #ffdde6;
+  --color-down-200: #ffbccd;
+  --color-down-300: #ff8dab;
+  --color-down-400: #ff3b70;
+  --color-down-500: #f01a55;
+  --color-down-600: #cc1046;
+  --color-down-700: #a30d38;
+  --color-down-800: #7a0a2a;
+  --color-down-900: #5c0820;
+  --color-down-950: #330411;
+
+  /* --- warning: the "degraded" amber ------------------------------------- */
+  --color-degraded-50: #fff8eb;
+  --color-degraded-100: #ffefd1;
+  --color-degraded-200: #ffdd9e;
+  --color-degraded-300: #ffc85c;
+  --color-degraded-400: #ffb224;
+  --color-degraded-500: #f09000;
+  --color-degraded-600: #c76f00;
+  --color-degraded-700: #9e5500;
+  --color-degraded-800: #7a4200;
+  --color-degraded-900: #5c3200;
+  --color-degraded-950: #331b00;
+
+  /* --- info: the "maintenance" blue -------------------------------------- */
+  --color-maintenance-50: #eef7ff;
+  --color-maintenance-100: #d8ecff;
+  --color-maintenance-200: #b0d9ff;
+  --color-maintenance-300: #7ac3ff;
+  --color-maintenance-400: #3ba9ff;
+  --color-maintenance-500: #0f8ded;
+  --color-maintenance-600: #0070c4;
+  --color-maintenance-700: #00589b;
+  --color-maintenance-800: #004476;
+  --color-maintenance-900: #00335a;
+  --color-maintenance-950: #001c33;
+
+  /* --- neutral: upcore's grayscale ---------------------------------------
+     Pure gray, no blue cast: the app's palette is `oklch(L 0 0)` throughout,
+     and zinc's chroma would read as a different product. The dark surfaces
+     land on the app's own values — 0.1 background, 0.15 card, 0.21 accent. */
+  --color-carbon-50: oklch(0.97 0 0);
+  --color-carbon-100: oklch(0.93 0 0);
+  --color-carbon-200: oklch(0.87 0 0);
+  --color-carbon-300: oklch(0.78 0 0);
+  --color-carbon-400: oklch(0.65 0 0);
+  --color-carbon-500: oklch(0.52 0 0);
+  --color-carbon-600: oklch(0.35 0 0);
+  --color-carbon-700: oklch(0.21 0 0);
+  --color-carbon-800: oklch(0.15 0 0);
+  --color-carbon-900: oklch(0.1 0 0);
+  --color-carbon-950: oklch(0.06 0 0);
+}
+
+:root {
+  /* The app's --radius, so a card here has the corner a card there has. */
+  --ui-radius: 0.625rem;
+}
+
+/* The app's border is an alpha over the background rather than a solid gray,
+   which is what keeps it from banding on the near-black canvas. */
+.dark {
+  --ui-border: oklch(1 0 0 / 10%);
+  --ui-border-muted: oklch(1 0 0 / 8%);
+  --ui-border-accented: oklch(1 0 0 / 15%);
+}
+
+/* Headings carry the brand face, with the app's optical tightening. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbars are part of the look on a near-black page: without this the
+   browser draws its light native ones straight through the design. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ui-border-accented) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--ui-border-accented);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
