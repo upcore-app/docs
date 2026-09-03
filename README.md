@@ -10,7 +10,7 @@
 **The documentation site for [upcore](https://github.com/upcore-app/upcore)** — self-hosted uptime
 monitoring with public status pages.
 
-[docs.upcore.app](https://docs.upcore.app) · [Product repo](https://github.com/upcore-app/upcore) · [upcore Cloud](https://go.upcore.app)
+[docs.upcore.app](https://docs.upcore.app) · [Product repo](https://github.com/upcore-app/upcore) · [upcore Cloud](https://go.upcore.app/register) · [Discord](https://discord.gg/eWeaQZYcyd)
 
 </div>
 
@@ -80,3 +80,9 @@ CI publishes the image to `ghcr.io/upcore-app/docs` on every push to `main`.
 
 Issues and pull requests are welcome. For anything about upcore itself — features, bugs,
 security — use the [product repo](https://github.com/upcore-app/upcore).
+
+## Support
+
+Questions and support run through our Discord:
+[discord.gg/eWeaQZYcyd](https://discord.gg/eWeaQZYcyd). Want upcore without hosting it
+yourself? [upcore Cloud](https://go.upcore.app/register) is free to start.
