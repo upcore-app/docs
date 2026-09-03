@@ -35,3 +35,13 @@ logs
 #VSC
 .history
 .wrangler
+
+# AI tooling
+.claude
+.agents
+.cursor
+.windsurf
+.aider*
+CLAUDE.md
+AGENTS.md
+skills-lock.json
