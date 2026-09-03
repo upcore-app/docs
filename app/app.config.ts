@@ -43,6 +43,7 @@ export default defineAppConfig({
 
   socials: {
     github: 'https://github.com/upcore-app/upcore',
+    discord: 'https://discord.gg/eWeaQZYcyd',
   },
 
   toc: {
@@ -54,6 +55,18 @@ export default defineAppConfig({
           icon: 'i-simple-icons-github',
           label: 'Source on GitHub',
           to: 'https://github.com/upcore-app/upcore',
+          target: '_blank',
+        },
+        {
+          icon: 'i-simple-icons-discord',
+          label: 'Support on Discord',
+          to: 'https://discord.gg/eWeaQZYcyd',
+          target: '_blank',
+        },
+        {
+          icon: 'i-lucide-cloud',
+          label: 'Start upcore Cloud',
+          to: 'https://go.upcore.app/register',
           target: '_blank',
         },
         {

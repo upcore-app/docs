@@ -151,6 +151,34 @@ description: Ein Container gegen eine Datei. Nichts bereitzustellen, nichts zu
     `/api/v1`, beschrieben durch ein OpenAPI-Dokument, das aus denselben Schemas
     erzeugt wird, gegen die die Endpunkte validieren.
     ::::
+
+    ::::u-page-card
+    ---
+    icon: i-lucide-network
+    spotlight: true
+    to: /de/guide/topology
+    ---
+    #title
+    Ein Bild davon, wer was prüft
+
+    #description
+    Ein Graph aus allen Standorten und allen Monitoren — samt denen, die still auf
+    den zentralen Check zurückgefallen sind.
+    ::::
+
+    ::::u-page-card
+    ---
+    icon: i-lucide-shield-check
+    spotlight: true
+    to: /de/guide/account-security
+    ---
+    #title
+    Passkeys und zweiter Faktor
+
+    #description
+    WebAuthn, TOTP mit Wiederherstellungscodes, eine Pflicht, die eine
+    Organisation allen Mitgliedern auferlegen kann, und jedes angemeldete Gerät.
+    ::::
   :::
 ::
 
@@ -243,7 +271,7 @@ description: upcore Cloud ist dieselbe Anwendung, betrieben von onesrv. Kostenlo
   upcore Cloud
 
   #description
-  Auf [go.upcore.app](https://go.upcore.app) registrieren und einen Monitor anlegen.
+  Auf [go.upcore.app](https://go.upcore.app/register) registrieren und einen Monitor anlegen.
   Kein Container, keine Datenbank, kein Zertifikat und kein Update, um das du
   dich kümmerst — geteilte Probe-Standorte kommen mit dem Tarif. Überall sonst
   in dieser Doku bleibt Self-Hosting der Standard.

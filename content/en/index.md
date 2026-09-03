@@ -151,6 +151,34 @@ description: A single container against a file. Nothing to provision, nothing to
     `/api/v1`, described by an OpenAPI document generated from the same schemas
     the endpoints validate against.
     ::::
+
+    ::::u-page-card
+    ---
+    icon: i-lucide-network
+    spotlight: true
+    to: /guide/topology
+    ---
+    #title
+    A picture of who checks what
+
+    #description
+    One graph of every location against every monitor — including the ones that
+    quietly fell back to the central check.
+    ::::
+
+    ::::u-page-card
+    ---
+    icon: i-lucide-shield-check
+    spotlight: true
+    to: /guide/account-security
+    ---
+    #title
+    Passkeys and a second factor
+
+    #description
+    WebAuthn, TOTP with recovery codes, a requirement an organization can put on
+    every member, and every device the account is signed in on.
+    ::::
   :::
 ::
 
@@ -241,7 +269,7 @@ description: upcore Cloud is the same application, operated by onesrv. Free to
   upcore Cloud
 
   #description
-  Sign up at [go.upcore.app](https://go.upcore.app) and add a monitor. No container, no
+  Sign up at [go.upcore.app](https://go.upcore.app/register) and add a monitor. No container, no
   database, no certificate and no update is yours to look after — and shared
   probe locations come with the plan. Self-hosting stays the default everywhere
   else in these docs.
